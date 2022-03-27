@@ -1,0 +1,31 @@
+{
+  "GRANKS": [
+    {
+      "description": "Test for A-STAR on granks.txt state space with granks_heuristic.txt heuristic",
+      "execution_args": "--ss granks.txt --alg astar --h granks_heuristic.txt",
+      "expected_output_fields": {
+        "FOUND_SOLUTION": {
+          "match": "exact",
+          "value": "yes"
+        },
+        "PATH": {
+          "match": "ignored",
+          "value": "A => B2 => C => D"
+        },
+        "PATH_LENGTH": {
+          "match": "ignored",
+          "value": "4"
+        },
+        "STATES_VISITED": {
+          "match": "ignored",
+          "value": "5"
+        },
+        "TOTAL_COST": {
+          "match": "exact",
+          "value": "3.0"
+        }
+      },
+      "name": "A-STAR granks_heuristic.txt"
+    }
+  ]
+}
