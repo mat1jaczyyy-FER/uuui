@@ -137,8 +137,12 @@ def iterate_student_solutions(solutions_dir=None, test_suites_dir=None, test_dir
       "error": ""
     }
 
+    if dir_name == ".gitignore":
+        continue
+    
     # [Assumption] The folder of the student solution (downloaded) should contain 
     # _only_ one file -- the archive with the solution
+
     student_dir = os.path.join(solutions_dir, dir_name)
     print(f"Directory: {student_dir}")
     files = list(os.listdir(student_dir)) # should be of length 1
