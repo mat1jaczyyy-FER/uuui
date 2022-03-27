@@ -1,0 +1,55 @@
+{
+  "ID3": [
+  ],
+  "ID3 limited depth": [
+    {
+      "execution_args": "train_4.csv test_4.csv 2",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "0.47619"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:A=False 2:C=False False",
+            "1:A=False 2:C=True False",
+            "1:A=False 2:C=Unknown Unknown",
+            "1:A=True 2:C=False True",
+            "1:A=True 2:C=True False",
+            "1:A=True 2:C=Unknown True",
+            "1:A=Unknown 2:B=False Unknown",
+            "1:A=Unknown 2:B=True Unknown",
+            "1:A=Unknown 2:B=Unknown False"
+          ],
+          "match": "contained",
+          "value": [
+            "1:A=False 2:C=False False",
+            "1:A=False 2:C=True False",
+            "1:A=False 2:C=Unknown Unknown",
+            "1:A=True 2:C=False True",
+            "1:A=True 2:C=True False",
+            "1:A=True 2:C=Unknown True",
+            "1:A=Unknown 2:B=False Unknown",
+            "1:A=Unknown 2:B=True Unknown",
+            "1:A=Unknown 2:B=Unknown False"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "5 1 1",
+            "2 2 1",
+            "3 3 3"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "True False True False True False True Unknown False False Unknown False False Unknown False True False Unknown Unknown True False"
+        }
+      },
+      "expected_output_full": "IG(A)=0.1651  IG(C)=0.0516  IG(D)=0.0459  IG(E)=0.0450  IG(B)=0.0160  \nIG(C)=0.3637  IG(B)=0.2693  IG(E)=0.2246  IG(D)=0.0524  \nIG(C)=0.1612  IG(D)=0.1367  IG(E)=0.0795  IG(B)=0.0559  \nIG(B)=0.5205  IG(C)=0.4696  IG(D)=0.2378  IG(E)=0.1299  \n[BRANCHES]:\n1:A=False 2:C=False False\n1:A=False 2:C=True False\n1:A=False 2:C=Unknown Unknown\n1:A=True 2:C=False True\n1:A=True 2:C=True False\n1:A=True 2:C=Unknown True\n1:A=Unknown 2:B=False Unknown\n1:A=Unknown 2:B=True Unknown\n1:A=Unknown 2:B=Unknown False\n[PREDICTIONS]: True False True False True False True Unknown False False Unknown False False Unknown False True False Unknown Unknown True False\n[ACCURACY]: 0.47619\n[CONFUSION_MATRIX]:\n5 1 1\n2 2 1\n3 3 3",
+      "name": "train_4.csv test_4.csv 2",
+      "task": "ID3 limited depth"
+    }
+  ]
+}

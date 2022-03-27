@@ -1,0 +1,543 @@
+{
+  "ID3": [
+    {
+      "execution_args": "volleyball.csv volleyball_test.csv",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "0.57895"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:weather=cloudy yes",
+            "1:weather=rainy 2:wind=strong no",
+            "1:weather=rainy 2:wind=weak yes",
+            "1:weather=sunny 2:humidity=high no",
+            "1:weather=sunny 2:humidity=normal yes"
+          ],
+          "match": "contained",
+          "value": [
+            "1:weather=cloudy yes",
+            "1:weather=rainy 2:wind=strong no",
+            "1:weather=rainy 2:wind=weak yes",
+            "1:weather=sunny 2:humidity=high no",
+            "1:weather=sunny 2:humidity=normal yes"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "4 7",
+            "1 7"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "yes yes yes yes no yes yes yes no yes yes no yes no no yes yes yes yes"
+        }
+      },
+      "expected_output_full": "IG(weather)=0.2467  IG(humidity)=0.1518  IG(wind)=0.0481  IG(temperature)=0.0292  \nIG(wind)=0.9710  IG(humidity)=0.0200  IG(temperature)=0.0200  \nIG(humidity)=0.9710  IG(temperature)=0.5710  IG(wind)=0.0200  \n[BRANCHES]:\n1:weather=cloudy yes\n1:weather=rainy 2:wind=strong no\n1:weather=rainy 2:wind=weak yes\n1:weather=sunny 2:humidity=high no\n1:weather=sunny 2:humidity=normal yes\n[PREDICTIONS]: yes yes yes yes no yes yes yes no yes yes no yes no no yes yes yes yes\n[ACCURACY]: 0.57895\n[CONFUSION_MATRIX]:\n4 7\n1 7",
+      "name": "volleyball.csv volleyball_test.csv",
+      "task": "ID3"
+    },
+    {
+      "execution_args": "logic_small.csv logic_small_test.csv",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "0.50000"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:A=False False",
+            "1:A=True 2:C=False False",
+            "1:A=True 2:C=True True"
+          ],
+          "match": "contained",
+          "value": [
+            "1:A=False False",
+            "1:A=True 2:C=False False",
+            "1:A=True 2:C=True True"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "3 2",
+            "1 0"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "False False True False False True"
+        }
+      },
+      "expected_output_full": "IG(A)=0.3219  IG(C)=0.2365  IG(D)=0.2365  IG(B)=0.0000  \nIG(C)=1.0000  IG(D)=1.0000  IG(B)=0.0000  \n[BRANCHES]:\n1:A=False False\n1:A=True 2:C=False False\n1:A=True 2:C=True True\n[PREDICTIONS]: False False True False False True\n[ACCURACY]: 0.50000\n[CONFUSION_MATRIX]:\n3 2\n1 0",
+      "name": "logic_small.csv logic_small_test.csv",
+      "task": "ID3"
+    },
+    {
+      "execution_args": "heldout_logic_f2_train.csv heldout_logic_f2_test.csv",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "0.75000"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:A=False 2:B=False 3:C=False 4:D=False True",
+            "1:A=False 2:B=False 3:C=False 4:D=True False",
+            "1:A=False 2:B=False 3:C=True False",
+            "1:A=False 2:B=True 3:D=False False",
+            "1:A=False 2:B=True 3:D=True True",
+            "1:A=True True"
+          ],
+          "match": "contained",
+          "value": [
+            "1:A=False 2:B=False 3:C=False 4:D=False True",
+            "1:A=False 2:B=False 3:C=False 4:D=True False",
+            "1:A=False 2:B=False 3:C=True False",
+            "1:A=False 2:B=True 3:D=False False",
+            "1:A=False 2:B=True 3:D=True True",
+            "1:A=True True"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "1 1",
+            "1 5"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "True True True True False True False True"
+        }
+      },
+      "expected_output_full": "IG(A)=0.2044  IG(D)=0.1589  IG(B)=0.0488  IG(C)=0.0032  \nIG(B)=0.0817  IG(D)=0.0817  IG(C)=0.0000  \nIG(C)=0.2516  IG(D)=0.2516  \nIG(D)=1.0000  \nIG(D)=0.9183  IG(C)=0.2516  \n[BRANCHES]:\n1:A=False 2:B=False 3:C=False 4:D=False True\n1:A=False 2:B=False 3:C=False 4:D=True False\n1:A=False 2:B=False 3:C=True False\n1:A=False 2:B=True 3:D=False False\n1:A=False 2:B=True 3:D=True True\n1:A=True True\n[PREDICTIONS]: True True True True False True False True\n[ACCURACY]: 0.75000\n[CONFUSION_MATRIX]:\n1 1\n1 5",
+      "name": "heldout_logic_f2_train.csv heldout_logic_f2_test.csv",
+      "task": "ID3"
+    },
+    {
+      "execution_args": "heldout_logic_f3_train.csv heldout_logic_f3_test.csv",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "1.00000"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:B=False True",
+            "1:B=True 2:A=False False",
+            "1:B=True 2:A=True True"
+          ],
+          "match": "contained",
+          "value": [
+            "1:B=False True",
+            "1:B=True 2:A=False False",
+            "1:B=True 2:A=True True"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "1 0",
+            "0 2"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "True True False"
+        }
+      },
+      "expected_output_full": "IG(B)=0.3219  IG(A)=0.1710  IG(C)=0.1710  \nIG(A)=1.0000  IG(C)=0.0000  \n[BRANCHES]:\n1:B=False True\n1:B=True 2:A=False False\n1:B=True 2:A=True True\n[PREDICTIONS]: True True False\n[ACCURACY]: 1.00000\n[CONFUSION_MATRIX]:\n1 0\n0 2",
+      "name": "heldout_logic_f3_train.csv heldout_logic_f3_test.csv",
+      "task": "ID3"
+    },
+    {
+      "execution_args": "heldout_logic_f4_train.csv heldout_logic_f4_test.csv",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "0.78571"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:E=False True",
+            "1:E=True 2:C=False False",
+            "1:E=True 2:C=True 3:D=False True",
+            "1:E=True 2:C=True 3:D=True 4:B=False False",
+            "1:E=True 2:C=True 3:D=True 4:B=True True"
+          ],
+          "match": "contained",
+          "value": [
+            "1:E=False True",
+            "1:E=True 2:C=False False",
+            "1:E=True 2:C=True 3:D=False True",
+            "1:E=True 2:C=True 3:D=True 4:B=False False",
+            "1:E=True 2:C=True 3:D=True 4:B=True True"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "3 1",
+            "2 8"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "True True True True False False False True True True True True False False"
+        }
+      },
+      "expected_output_full": "IG(E)=0.3569  IG(B)=0.1582  IG(C)=0.1474  IG(A)=0.0198  IG(D)=0.0112  \nIG(C)=0.5900  IG(B)=0.3198  IG(D)=0.0911  IG(A)=0.0183  \nIG(D)=0.3219  IG(B)=0.1710  IG(A)=0.0729  \nIG(B)=1.0000  IG(A)=0.0000  \n[BRANCHES]:\n1:E=False True\n1:E=True 2:C=False False\n1:E=True 2:C=True 3:D=False True\n1:E=True 2:C=True 3:D=True 4:B=False False\n1:E=True 2:C=True 3:D=True 4:B=True True\n[PREDICTIONS]: True True True True False False False True True True True True False False\n[ACCURACY]: 0.78571\n[CONFUSION_MATRIX]:\n3 1\n2 8",
+      "name": "heldout_logic_f4_train.csv heldout_logic_f4_test.csv",
+      "task": "ID3"
+    },
+    {
+      "execution_args": "heldout_singlefeat_train.csv heldout_singlefeat_test.csv",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "1.00000"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:one=a yes",
+            "1:one=b no",
+            "1:one=c yes"
+          ],
+          "match": "contained",
+          "value": [
+            "1:one=a yes",
+            "1:one=b no",
+            "1:one=c yes"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "1 0",
+            "0 2"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "yes no yes"
+        }
+      },
+      "expected_output_full": "IG(one)=0.9183  \n[BRANCHES]:\n1:one=a yes\n1:one=b no\n1:one=c yes\n[PREDICTIONS]: yes no yes\n[ACCURACY]: 1.00000\n[CONFUSION_MATRIX]:\n1 0\n0 2",
+      "name": "heldout_singlefeat_train.csv heldout_singlefeat_test.csv",
+      "task": "ID3"
+    },
+    {
+      "execution_args": "heldout_small_train.csv heldout_small_test.csv",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "1.00000"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:one=a yes",
+            "1:one=b no",
+            "1:one=c maybe"
+          ],
+          "match": "contained",
+          "value": [
+            "1:one=a yes",
+            "1:one=b no",
+            "1:one=c maybe"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "1 0 0",
+            "0 1 0",
+            "0 0 1"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "yes no maybe"
+        }
+      },
+      "expected_output_full": "IG(one)=1.5850  IG(three)=1.5850  IG(two)=1.5850  \n[BRANCHES]:\n1:one=a yes\n1:one=b no\n1:one=c maybe\n[PREDICTIONS]: yes no maybe\n[ACCURACY]: 1.00000\n[CONFUSION_MATRIX]:\n1 0 0\n0 1 0\n0 0 1",
+      "name": "heldout_small_train.csv heldout_small_test.csv",
+      "task": "ID3"
+    },
+    {
+      "execution_args": "heldout_unseen_featurevalue_train.csv heldout_unseen_featurevalue_test.csv",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "0.33333"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:one=a yes",
+            "1:one=b no",
+            "1:one=c maybe"
+          ],
+          "match": "contained",
+          "value": [
+            "1:one=a yes",
+            "1:one=b no",
+            "1:one=c maybe"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "1 0 0",
+            "1 0 0",
+            "1 0 0"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "maybe maybe maybe"
+        }
+      },
+      "expected_output_full": "IG(one)=1.5850  IG(three)=1.5850  IG(two)=1.5850  \n[BRANCHES]:\n1:one=a yes\n1:one=b no\n1:one=c maybe\n[PREDICTIONS]: maybe maybe maybe\n[ACCURACY]: 0.33333\n[CONFUSION_MATRIX]:\n1 0 0\n1 0 0\n1 0 0",
+      "name": "heldout_unseen_featurevalue_train.csv heldout_unseen_featurevalue_test.csv",
+      "task": "ID3"
+    }
+  ],
+  "ID3 limited depth": [
+    {
+      "execution_args": "volleyball.csv volleyball_test.csv 1",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "0.36842"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:weather=cloudy yes",
+            "1:weather=rainy yes",
+            "1:weather=sunny no"
+          ],
+          "match": "contained",
+          "value": [
+            "1:weather=cloudy yes",
+            "1:weather=rainy yes",
+            "1:weather=sunny no"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "2 9",
+            "3 5"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "yes no no yes yes no yes yes yes yes yes yes yes no no yes yes yes yes"
+        }
+      },
+      "expected_output_full": "IG(weather)=0.2467  IG(humidity)=0.1518  IG(wind)=0.0481  IG(temperature)=0.0292  \n[BRANCHES]:\n1:weather=cloudy yes\n1:weather=rainy yes\n1:weather=sunny no\n[PREDICTIONS]: yes no no yes yes no yes yes yes yes yes yes yes no no yes yes yes yes\n[ACCURACY]: 0.36842\n[CONFUSION_MATRIX]:\n2 9\n3 5",
+      "name": "volleyball.csv volleyball_test.csv 1",
+      "task": "ID3"
+    },
+    {
+      "execution_args": "titanic_train_categorical.csv titanic_test_categorical.csv 2",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "0.77228"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:sex=female 2:passenger_class=lower_class yes",
+            "1:sex=female 2:passenger_class=middle_class yes",
+            "1:sex=female 2:passenger_class=upper_class yes",
+            "1:sex=male 2:cabin_letter=A no",
+            "1:sex=male 2:cabin_letter=B no",
+            "1:sex=male 2:cabin_letter=C no",
+            "1:sex=male 2:cabin_letter=D no",
+            "1:sex=male 2:cabin_letter=E no",
+            "1:sex=male 2:cabin_letter=F no",
+            "1:sex=male 2:cabin_letter=T no",
+            "1:sex=male 2:cabin_letter=U no"
+          ],
+          "match": "contained",
+          "value": [
+            "1:sex=female 2:passenger_class=lower_class yes",
+            "1:sex=female 2:passenger_class=middle_class yes",
+            "1:sex=female 2:passenger_class=upper_class yes",
+            "1:sex=male 2:cabin_letter=A no",
+            "1:sex=male 2:cabin_letter=B no",
+            "1:sex=male 2:cabin_letter=C no",
+            "1:sex=male 2:cabin_letter=D no",
+            "1:sex=male 2:cabin_letter=E no",
+            "1:sex=male 2:cabin_letter=F no",
+            "1:sex=male 2:cabin_letter=G no",
+            "1:sex=male 2:cabin_letter=T no",
+            "1:sex=male 2:cabin_letter=U no"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "54 11",
+            "12 24"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "no no yes no no no yes yes no yes no yes no no no no no yes no yes no no no yes no no yes no no no yes no no yes no no no no no yes yes no no no no yes no no no no no no yes no no no no no no yes no no yes yes yes yes yes no yes no no no yes yes no yes yes no no no no yes no no yes yes no no no yes yes no yes no no yes no yes yes no no"
+        }
+      },
+      "expected_output_full": "IG(sex)=0.2180  IG(fare)=0.0888  IG(passenger_class)=0.0712  IG(cabin_letter)=0.0682  IG(age)=0.0204  \nIG(passenger_class)=0.1914  IG(cabin_letter)=0.1050  IG(fare)=0.0961  IG(age)=0.0533  \nIG(cabin_letter)=0.0492  IG(age)=0.0384  IG(fare)=0.0369  IG(passenger_class)=0.0330  \n[BRANCHES]:\n1:sex=female 2:passenger_class=lower_class yes\n1:sex=female 2:passenger_class=middle_class yes\n1:sex=female 2:passenger_class=upper_class yes\n1:sex=male 2:cabin_letter=A no\n1:sex=male 2:cabin_letter=B no\n1:sex=male 2:cabin_letter=C no\n1:sex=male 2:cabin_letter=D no\n1:sex=male 2:cabin_letter=E no\n1:sex=male 2:cabin_letter=F no\n1:sex=male 2:cabin_letter=G no\n1:sex=male 2:cabin_letter=T no\n1:sex=male 2:cabin_letter=U no\n[PREDICTIONS]: no no yes no no no yes yes no yes no yes no no no no no yes no yes no no no yes no no yes no no no yes no no yes no no no no no yes yes no no no no yes no no no no no no yes no no no no no no yes no no yes yes yes yes yes no yes no no no yes yes no yes yes no no no no yes no no yes yes no no no yes yes no yes no no yes no yes yes no no\n[ACCURACY]: 0.77228\n[CONFUSION_MATRIX]:\n54 11\n12 24",
+      "name": "titanic_train_categorical.csv titanic_test_categorical.csv 2",
+      "task": "ID3"
+    },
+    {
+      "execution_args": "logic_small.csv logic_small_test.csv 1",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "0.83333"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:A=False False",
+            "1:A=True False"
+          ],
+          "match": "contained",
+          "value": [
+            "1:A=False False",
+            "1:A=True False"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "5 0",
+            "1 0"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "False False False False False False"
+        }
+      },
+      "expected_output_full": "IG(A)=0.3219  IG(C)=0.2365  IG(D)=0.2365  IG(B)=0.0000  \n[BRANCHES]:\n1:A=False False\n1:A=True False\n[PREDICTIONS]: False False False False False False\n[ACCURACY]: 0.83333\n[CONFUSION_MATRIX]:\n5 0\n1 0",
+      "name": "logic_small.csv logic_small_test.csv 1",
+      "task": "ID3"
+    },
+    {
+      "execution_args": "heldout_logic_f2_train.csv heldout_logic_f2_test.csv 3",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "0.75000"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:A=False 2:B=False 3:C=False False",
+            "1:A=False 2:B=False 3:C=True False",
+            "1:A=False 2:B=True 3:D=False False",
+            "1:A=False 2:B=True 3:D=True True",
+            "1:A=True True"
+          ],
+          "match": "contained",
+          "value": [
+            "1:A=False 2:B=False 3:C=False False",
+            "1:A=False 2:B=False 3:C=True False",
+            "1:A=False 2:B=True 3:D=False False",
+            "1:A=False 2:B=True 3:D=True True",
+            "1:A=True True"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "1 1",
+            "1 5"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "True True True True False True False True"
+        }
+      },
+      "expected_output_full": "IG(A)=0.2044  IG(D)=0.1589  IG(B)=0.0488  IG(C)=0.0032  \nIG(B)=0.0817  IG(D)=0.0817  IG(C)=0.0000  \nIG(C)=0.2516  IG(D)=0.2516  \nIG(D)=0.9183  IG(C)=0.2516  \n[BRANCHES]:\n1:A=False 2:B=False 3:C=False False\n1:A=False 2:B=False 3:C=True False\n1:A=False 2:B=True 3:D=False False\n1:A=False 2:B=True 3:D=True True\n1:A=True True\n[PREDICTIONS]: True True True True False True False True\n[ACCURACY]: 0.75000\n[CONFUSION_MATRIX]:\n1 1\n1 5",
+      "name": "heldout_logic_f2_train.csv heldout_logic_f2_test.csv 3",
+      "task": "ID3"
+    },
+    {
+      "execution_args": "heldout_logic_f3_train.csv heldout_logic_f3_test.csv 1",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "0.66667"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:B=False True",
+            "1:B=True False"
+          ],
+          "match": "contained",
+          "value": [
+            "1:B=False True",
+            "1:B=True False"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "1 0",
+            "1 1"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "False True False"
+        }
+      },
+      "expected_output_full": "IG(B)=0.3219  IG(A)=0.1710  IG(C)=0.1710  \n[BRANCHES]:\n1:B=False True\n1:B=True False\n[PREDICTIONS]: False True False\n[ACCURACY]: 0.66667\n[CONFUSION_MATRIX]:\n1 0\n1 1",
+      "name": "heldout_logic_f3_train.csv heldout_logic_f3_test.csv 1",
+      "task": "ID3"
+    },
+    {
+      "execution_args": "heldout_logic_f4_train.csv heldout_logic_f4_test.csv 2",
+      "expected_output_fields": {
+        "ACCURACY": {
+          "match": "exact",
+          "value": "0.71429"
+        },
+        "BRANCHES": {
+          "alternative": [
+            "1:E=False True",
+            "1:E=True 2:C=False False",
+            "1:E=True 2:C=True True"
+          ],
+          "match": "contained",
+          "value": [
+            "1:E=False True",
+            "1:E=True 2:C=False False",
+            "1:E=True 2:C=True True"
+          ]
+        },
+        "CONFUSION_MATRIX": {
+          "match": "ordered",
+          "value": [
+            "2 2",
+            "2 8"
+          ]
+        },
+        "PREDICTIONS": {
+          "match": "exact",
+          "value": "True True True True False False False True True True True True False True"
+        }
+      },
+      "expected_output_full": "IG(E)=0.3569  IG(B)=0.1582  IG(C)=0.1474  IG(A)=0.0198  IG(D)=0.0112  \nIG(C)=0.5900  IG(B)=0.3198  IG(D)=0.0911  IG(A)=0.0183  \n[BRANCHES]:\n1:E=False True\n1:E=True 2:C=False False\n1:E=True 2:C=True True\n[PREDICTIONS]: True True True True False False False True True True True True False True\n[ACCURACY]: 0.71429\n[CONFUSION_MATRIX]:\n2 2\n2 8",
+      "name": "heldout_logic_f4_train.csv heldout_logic_f4_test.csv 2",
+      "task": "ID3"
+    }
+  ]
+}

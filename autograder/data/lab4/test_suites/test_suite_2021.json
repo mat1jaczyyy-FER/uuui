@@ -1,0 +1,39 @@
+{
+  "Genetic algorithm neural net": [
+    {
+      "execution_args": "--train sine_train.txt --test sine_test.txt --nn 5s --popsize 10 --elitism 1 --p 0.1 --K 0.1 --iter 2000",
+      "expected_output_fields": {"Train output":{"match":"any"}, "Test output":{"match":"any"}},
+      "expected_output_full": "",
+      "name": "Check 5s architecture convergence on sine",
+      "task": "Genetic algorithm neural net"
+    },
+    {
+      "execution_args": "--train sine_train.txt --test sine_test.txt --nn 20s --popsize 10 --elitism 1 --p 0.7 --K 0.1 --iter 2000",
+      "expected_output_fields": {"Train output":{"match":"any"}, "Test output":{"match":"any"}},
+      "expected_output_full": "",
+      "name": "Check 20s  architecture convergence on sine",
+      "task": "Genetic algorithm neural net"
+    },
+    {
+      "execution_args": "--train sine_train.txt --test sine_test.txt --nn 5s5s --popsize 10 --elitism 1 --p 0.7 --K 0.1 --iter 2000",
+      "expected_output_fields": {"Train output":{"match":"any"}, "Test output":{"match":"any"}},
+      "expected_output_full": "",
+      "name": "Check 5s5s  architecture convergence on sine",
+      "task": "Genetic algorithm neural net"
+    },
+    {
+      "execution_args": "--train rastrigin_train.txt --test rastrigin_test.txt --nn 5s --popsize 10 --elitism 1 --p 0.3 --K 0.5 --iter 2000",
+      "expected_output_fields": {"Train output":{"match":"any"}, "Test output":{"match":"any"}},
+      "expected_output_full": "",
+      "name": "Check rastrigin run",
+      "task": "Genetic algorithm neural net"
+    },
+    {
+      "execution_args": "--train rosenbrock_train.txt --test rosenbrock_test.txt --nn 5s --popsize 10 --elitism 1 --p 0.5 --K 4. --iter 2000",
+      "expected_output_fields": {"Train output":{"match":"any"}, "Test output":{"match":"any"}},
+      "expected_output_full": "",
+      "name": "Check rosenbrock run",
+      "task": "Genetic algorithm neural net"
+    }
+  ]
+}
