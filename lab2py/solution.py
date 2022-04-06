@@ -16,7 +16,7 @@ def subset(a, b):
 def clause_str(s):
     return ' v '.join(LITERALS[i] for i in sorted(s, key = lambda x: abs(x))) if len(s) else "NIL"
 
-def resolution(clauses, print_on_fail = True):
+def resolution(clauses):
     target = clauses[-1]
     del clauses[-1]
     
@@ -106,7 +106,7 @@ def resolution(clauses, print_on_fail = True):
     
     result = search()
 
-    if print_on_fail or result:
+    if result:
         def reconstruct(i, s = set()):
             if i == None: return
             
@@ -155,7 +155,7 @@ def cooking(clauses):
         print(f"User's command: {s} {action}")
 
         if action == "?":
-            resolution(clauses + [clause], False)
+            resolution(clauses + [clause])
         
         elif action == "+":
             if clause not in clauses:
