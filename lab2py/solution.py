@@ -79,11 +79,9 @@ def resolution(clauses, print_on_fail = True):
                 if not x[3]: continue
 
                 for j, y in enumerate_from(clauses, start = max(next, i + 1)):
-                    if not x[3]: continue
-                    if i == j: continue
+                    if not y[3]: continue
                     
                     literal = resolve(x[0], y[0])
-                    
                     if literal == None:
                         continue
 
@@ -93,7 +91,8 @@ def resolution(clauses, print_on_fail = True):
                         clauses.append([r, i, j, True])
                         return True
                     
-                    if not eliminate(r, clauses, new): continue
+                    if not eliminate(r, clauses, new):
+                        continue
 
                     new.append([r, i, j, True])
             
