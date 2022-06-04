@@ -14,7 +14,7 @@ def filearg(flag: str):
 
 def ndarray_combine(a: np.ndarray, b: np.ndarray):
     mean = (a + b) / 2
-    return np.where(np.random.uniform(size=mean.shape) < P, mean + K * np.random.normal(size=mean.shape), mean)
+    return np.where(np.random.uniform(size=mean.shape) < P, mean + np.random.normal(0, K, mean.shape), mean)
 
 class Transform():
     def combine(self, other: Transform):
